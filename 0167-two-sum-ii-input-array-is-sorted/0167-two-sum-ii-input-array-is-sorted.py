@@ -1,27 +1,13 @@
 class Solution:
     def twoSum(self, numbers: List[int], target: int) -> List[int]:
-        i=0
-        for i in range(len(numbers)-1):
-            
-            if( numbers[i] + numbers[i+1] == target):
-                return [i+1, i+2]
+        r = 0
+        l = len(numbers) - 1
+        while r < l:
+            sum = numbers[r] + numbers[l]
+            if sum == target:
+                return [r+1,l+1]
+            elif sum > target:
+                l-=1
             else:
-                if (target - numbers[i]) in numbers:
-                    return [i+1,numbers.index(target-numbers[i])+1]
-                
-                    
-                  
+                r+=1        
         
-        
-                
-            # if numbers[j] == (target - numbers[i]) :
-
-            #     res.append(i+1)
-            #     res.append(numbers.index(target-numbers[i])+1)
-            #     return res
-            # else:
-            #     i+=1
-
-                 
-
-
