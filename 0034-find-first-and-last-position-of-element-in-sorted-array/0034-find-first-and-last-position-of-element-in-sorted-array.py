@@ -7,8 +7,6 @@ class Solution:
             if nums[i] == target:
                 res.append(i)
 
-        if len(res) == 1:
-            res.append(res[0])        
         return [min(res), max(res)]
 
             
